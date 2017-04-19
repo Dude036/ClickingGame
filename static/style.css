@@ -1,0 +1,33 @@
+html {
+    background: url(background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    padding-right: 5%;
+    padding-left: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo_padding {
+    padding-top: 10%;
+}
+
+.gamefield, .scores {
+    position: relative;
+    min-height: 1px;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+}
+
+.gamefield {
+    width: 40%;
+    float: left;
+}
+
+.scores {
+    width: 40%;
+    float: right;
+}

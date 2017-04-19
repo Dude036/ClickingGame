@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Clicking Game</title>{% endblock %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static "style.css" %}">
+  <script type="text/javascript" src="{% static "game.js" %}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo_padding"></div>
+        <div class="gamefield">
+            <p>This is a Gamefield test</p>
+            <img src="{% static "Button Up.png" %}" alt="Button" id="Button">
+        </div>
+        <div class="scores">
+            {%block scores %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>
