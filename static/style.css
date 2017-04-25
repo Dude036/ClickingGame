@@ -19,7 +19,6 @@ html {
     min-height: 1px;
     padding-left: 5%;
     padding-right: 5%;
-    text-align: center;
 }
 
 .gamefield {
@@ -31,3 +30,19 @@ html {
     width: 40%;
     float: right;
 }
+
+.centerText, .scores {
+    text-align: center;
+}
+
+.resetTimer {
+    width: 20%;
+    float: right;
+}
+
+.stopwatchtimer {
+    width: 20%;
+    float: left;
+}
+
+
