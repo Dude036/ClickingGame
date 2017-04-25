@@ -1,6 +1,6 @@
 {% extends 'generic.html' %}
 {% block scores %}
-<h2>High Scores</h2>
+<h1>High Scores</h2>
 <ol>
     {% for scores in scores.all %}
     <li>{{ scores.high_score }} - {{ scores.full_name }}</li>

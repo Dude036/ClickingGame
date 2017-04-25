@@ -12,14 +12,14 @@
         <div class="logo_padding"></div>
         <div class="gamefield">
             <div class="stopwatchtimer">
-                <p><span id="sec">5</span>:<span id="milli">0</span> second(s)</p>
+                <span id="sec">5</span>:<span id="milli">0</span> second(s)
             </div>
             <div class="resetTimer">
                 <input type="button" name="Reset Game" id="gameReset" value="Reset Game" onclick="resetGame()"/>
             </div>
-            <p></p>
+            <div class="p-buffer"></div>
             <div class="centerText">
-                <h3 id="ScorePlace">0</h3>
+                <h2 id="ScorePlace">0</h2>
                 <img src="{% static "Button Up.png" %}" alt="Button" id="gameButton" onmousedown=mouseDown(this) onmouseup=mouseUp(this)>
             </div>
         </div>

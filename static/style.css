@@ -36,13 +36,17 @@ html {
 }
 
 .resetTimer {
-    width: 20%;
+    padding: 15px;
     float: right;
 }
 
 .stopwatchtimer {
-    width: 20%;
+    padding: 15px;
     float: left;
+    font-size: medium;
+    font-weight: bolder;
 }
 
-
+.p-buffer {
+    padding-top: 10%;
+}

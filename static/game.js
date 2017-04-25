@@ -5,11 +5,14 @@ var Interval;
 
 function mouseDown(image) {
     image.src="/static/Button Down.png";
-    clickCount++;
     if (seconds == 5) {
         startGame();
     }
-    printScore();
+    if (seconds > 0 || milli > 0)
+    {
+        clickCount++;
+        printScore();
+    }
 }
 
 function mouseUp(image) {
