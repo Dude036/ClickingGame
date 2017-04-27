@@ -26,6 +26,7 @@ function printScore() {
 
 function resetGame() {
     clickCount = 0;
+    stopTimer();
     printScore();
     seconds = 5;
     milli = 0;
@@ -34,9 +35,11 @@ function resetGame() {
 }
 
 function startGame() {
-    clearInterval(Interval);
-    Interval = setInterval(gameTimer, 10);
+    startTimer();
 }
+
+function startTimer() { Interval = setInterval(gameTimer, 10); }
+function stopTimer() {  clearInterval(Interval); }
 
 function gameTimer() {
     milli--;
@@ -61,6 +64,7 @@ function gameTimer() {
 }
 
 function endGame() {
-    clearInterval(Interval);
-    var score = clickCount;
+    stopTimer();
+    var formElement = document.getElementById("hiddenElement");
+    formElement.value = clickCount;
 }

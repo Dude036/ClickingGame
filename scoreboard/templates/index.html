@@ -1,12 +1,48 @@
-{% extends 'generic.html' %}
-{% block scores %}
-<h1>High Scores</h2>
-<ol>
-    {% for scores in scores.all %}
-    <li>{{ scores.high_score }} - {{ scores.full_name }}</li>
-    {% endfor %}
-</ol>
-<p>Rules: To start the Game check to see if the timer is at 5.00, if it is, the game is ready to begin.
-Upon your first click, the timer starts and the number of clicks is recorded. Once the timer runs out, the click will be recorded, and your name will be put on the leaderboard when necessary.
-To play another game, click the reset game button for another shot on the leaderboard.</p>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Clicking Game</title>{% endblock %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static "style.css" %}">
+  <script type="text/javascript" src="{% static "game.js" %}"></script>
+</head>
+<body>
+<div class="container">
+  <div class="logo_padding"></div>
+    <div class="gamefield">
+      <div class="stopwatchtimer">
+        <span id="sec">5</span>:<span id="milli">0</span> second(s)
+      </div>
+      <div class="resetTimer">
+        <input type="button" name="Reset Game" id="gameReset" value="Reset Game" onclick="resetGame()"/>
+      </div>
+      <div class="p-buffer"></div>
+        <div class="centerText">
+          <h2 id="ScorePlace">0</h2>
+          <img src="{% static "Button Up.png" %}" alt="Button" id="gameButton" onmousedown=mouseDown(this) onmouseup=mouseUp(this)>
+        </div>
+      </div>
+    <div class="scores">
+      <h1 id="High Scores">High Scores</h2>
+      <ol>
+        {% for scores in scores.all %}
+        <li>{{ scores.high_score }} - {{ scores.full_name }}</li>
+        {% endfor %}
+      </ol>
+      <p>
+        Rules: To start the Game check to see if the timer is at 5.00, if it is, the game is ready to begin.
+        Upon your first click, the timer starts and the number of clicks is recorded.
+        Once the timer runs out, the click will be recorded, and your name will be put on the leaderboard when necessary.
+        To play another game, click the reset game button for another shot on the leaderboard
+      </p>
+    <form action="{% url 'create' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="Highscore" id="hiddenElement" value="0"/>
+        <input type="text" name="Full Name" id="textBox" required/>
+        <input type="submit" value="Submit for Highscore"/>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
